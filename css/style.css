@@ -1,6 +1,4 @@
 body {
-    padding-left: 5vw;
-    padding-right: 5vw;
     color: white;
     background-color:#24222b;
 }
@@ -27,13 +25,17 @@ p {
 
 
 .container {
+    margin-left: auto;
+    margin-right: auto;
+
     position: relative;
     top: 50vh;
     transform: translateY(-50%);
+
     padding-top: 2vh;
     padding-left: 5vw;
     padding-right: 5vw;
-    margin: auto;
+
     background-color: #473394;
     border-radius: 20px;
 }
