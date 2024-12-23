@@ -1,4 +1,37 @@
+body {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    color: white;
+    background-color:#24222b;
+}
+
 h1 {
-    color: #308030;
     text-align: center;
+}
+
+p {
+    font-size: large;
+}
+
+img {
+    height: 70vh;
+}
+
+.container {
+    position: relative;
+    top: 50vh;
+    transform: translateY(-50%);
+    padding-top: 2vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    margin: auto;
+    background-color: #473394;
+    border-radius: 20px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
 }
