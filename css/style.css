@@ -13,9 +13,18 @@ p {
     font-size: large;
 }
 
-img {
-    height: 70vh;
+
+@media (orientation: portrait) {
+    img {
+        max-width: 25vw;
+    }
 }
+@media (orientation: landscape) {
+    img {
+        max-height: 70vh;
+    }
+}
+
 
 .container {
     position: relative;
