@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /**@param {HTMLElement} img */
     function leafAnimation (img) {
         let /**@type {Number} */
-            rotate = img.style.rotate? parseInt(img.style.rotate, 10) : Math.floor(Math.random() * 90);
+            rotate = img.style.rotate? parseFloat(img.style.rotate) : Math.floor(Math.random() * 90);
         img.style.rotate = (rotate + wind) + 'deg';
     };
 });
