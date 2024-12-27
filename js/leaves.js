@@ -4,10 +4,12 @@ let
     /**@type {Number}*/ wind = 1, 
     /**@type {Number}*/ impulse = 1;
 
+const /**@type {HTMLElement} */ div = document.getElementById('animation-div') || document.documentElement;
+
+
 setInterval(function() {
     wind = Math.floor(Math.random() * 2) * 2 - 1;
 }, (40 * 1000));
-
 
 document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < 20; i++) {
@@ -32,8 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         img.setAttribute('isBusy', 'false');
                     }
                     else {
-                        img.style.left = (left + i * wind * 2) + 'px';
-                        img.style.top = (top + -impulse * 2) + 'px';
+                        img.style.left = Math.floor(left + i * wind * 2) + 'px';
+                        img.style.top = Math.floor(top + -impulse * 2) + 'px';
                         i++;
                     }
                 }, 30);
@@ -49,28 +51,30 @@ document.addEventListener('DOMContentLoaded', () => {
     function fallAnimation (img) {
         if (img.getAttribute('isBusy') === 'true')
             return;
-        const 
+        let 
             /**@type {Number} */ top = img.style.top && img.getAttribute('restart') !== 'true'
                 ? parseInt(img.style.top, 10) 
                 : Math.floor(Math.random() * 2) === 1
-                    ? Math.floor(Math.random() * window.innerHeight) - img.getBoundingClientRect().height
-                    : 0 - img.getBoundingClientRect().height,
+                    ? Math.floor(Math.random() * div.clientHeight) - img.getBoundingClientRect().height
+                    : 0,
             /**@type {Number} */ left = img.style.left && img.getAttribute('restart') !== 'true'
                 ? parseInt(img.style.left, 10) 
                 : (img.setAttribute('restart', 'false'), top > 0
                     ? wind > 0
-                        ? -img.getBoundingClientRect().width
-                        : window.innerWidth
-                    : Math.floor(Math.random() * (window.innerWidth - img.getBoundingClientRect().width))
+                        ? 0
+                        : div.clientWidth - img.getBoundingClientRect().width
+                    : Math.floor(Math.random() * (div.clientWidth - img.getBoundingClientRect().width))
                     );
+        top += impulse;
+        left += wind;
 
-        if ((top <= window.innerHeight)
+        if ((top <= div.clientHeight - img.getBoundingClientRect().height)
             && 
-            (left <= window.innerWidth + img.getBoundingClientRect().width 
+            (left <= div.clientWidth - img.getBoundingClientRect().width
                 &&
-                left >= -img.getBoundingClientRect().width)) {
-            img.style.top = (top + impulse) + 'px';
-            img.style.left = (left + wind) + 'px';
+                left >= 0)) {
+            img.style.top = Math.floor(top) + 'px';
+            img.style.left = Math.floor(left) + 'px';
         }
         else
             img.setAttribute('restart', 'true');
