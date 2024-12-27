@@ -1,4 +1,7 @@
 body {
+    background-image: url("../img/background.png");
+    background-size: cover;
+    background-attachment: fixed;
     overflow: hidden;
     
     padding-left: 2vw;
@@ -43,6 +46,7 @@ p {
 
     background-color: #473394;
     border-radius: 20px;
+    opacity: 90%;
 }
 
 .info {
@@ -53,7 +57,9 @@ p {
 }
 
 .leaf {
+    z-index: 10;
     top: -4vh;
     position: absolute;
     height: 3vh;
+    filter:opacity(80%);
 }

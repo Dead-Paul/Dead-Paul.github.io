@@ -6,7 +6,6 @@ let
 
 setInterval(function() {
     wind = Math.floor(Math.random() * 2) * 2 - 1;
-    console.log(wind);
 }, (40 * 1000));
 
 
@@ -21,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // Next line for editor. causing error if left, therefore after editing comment next string: 
             // /**@param {HTMLElement} img */
             function mouseOverLeaf(img) {
-                console.log(img);
                 img.setAttribute('isBusy', 'true');
                 /**@type {Number} */
                 let top = parseInt(img.style.top);
@@ -54,17 +52,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const 
             /**@type {Number} */ top = img.style.top && img.getAttribute('restart') !== 'true'
                 ? parseInt(img.style.top, 10) 
-                : -img.getBoundingClientRect().height,
+                : Math.floor(Math.random() * 2) === 1
+                    ? Math.floor(Math.random() * window.innerHeight) - img.getBoundingClientRect().height
+                    : 0 - img.getBoundingClientRect().height,
             /**@type {Number} */ left = img.style.left && img.getAttribute('restart') !== 'true'
                 ? parseInt(img.style.left, 10) 
-                : (img.setAttribute('restart', 'false'),
-                    Math.floor(Math.random() * (screen.width - img.getBoundingClientRect().width)));
+                : (img.setAttribute('restart', 'false'), top > 0
+                    ? wind > 0
+                        ? -img.getBoundingClientRect().width
+                        : window.innerWidth
+                    : Math.floor(Math.random() * (window.innerWidth - img.getBoundingClientRect().width))
+                    );
 
-        if ((top <= screen.height)
+        if ((top <= window.innerHeight)
             && 
-            (left <= screen.width - img.getBoundingClientRect().width 
+            (left <= window.innerWidth + img.getBoundingClientRect().width 
                 &&
-                left >= 0 - img.getBoundingClientRect().width)) {
+                left >= -img.getBoundingClientRect().width)) {
             img.style.top = (top + impulse) + 'px';
             img.style.left = (left + wind) + 'px';
         }
