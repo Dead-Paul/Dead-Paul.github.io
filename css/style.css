@@ -1,4 +1,6 @@
 body {
+    overflow: hidden;
+    
     padding-left: 2vw;
     padding-right: 2vw;
     
@@ -48,4 +50,10 @@ p {
     align-items: center;
     justify-content: center;
     flex-direction: row;
+}
+
+.leaf {
+    top: -4vh;
+    position: absolute;
+    height: 3vh;
 }
