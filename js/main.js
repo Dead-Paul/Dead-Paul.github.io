@@ -9,7 +9,7 @@ const displayError = text => {
 
 const displayJarInfo = async function () {
     try {
-        let info = await fetch('https://api.monobank.ua/personal/client-info',
+        const info = await fetch('https://api.monobank.ua/personal/client-info',
             {
                 method: 'GET',
                 headers: {'X-Token': 'uCmgOU8-m487ZsYzS9IRyiF1oi0AVgojEt_QTpSDyTiI'}
@@ -36,4 +36,5 @@ const displayJarInfo = async function () {
 
 document.addEventListener('DOMContentLoaded', () => {
     displayJarInfo();
+    fetch('https://niraijisu.pythonanywhere.com/').then(response => response.json()).then(response => console.log(response)).catch(error => console.error(error));
 });
