@@ -34,7 +34,10 @@ const displayJarInfo = async function () {
     animeChan.setActive('mouth', 'sad');
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-    displayJarInfo();
-    fetch('https://niraijisu.pythonanywhere.com/').then(response => response.json()).then(response => console.log(response)).catch(error => console.error(error));
-});
+document.addEventListener('DOMContentLoaded', displayJarInfo);
+document.addEventListener('DOMContentLoaded', () => (
+    fetch('https://niraijisu.pythonanywhere.com/')
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(error => console.error(error))
+));
