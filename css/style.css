@@ -28,18 +28,18 @@ h1 {
 
 #anime-chan-container {
     position: relative;
-    width: 50vw;
-    height: 20vh;
 }
 
 @media (orientation: portrait) {
     #anime-chan-container {
-        min-width: 50vw;
+        --adjust-to: "width";
+        width: 25vw;
     }
 }
 @media (orientation: landscape) {
     #anime-chan-container {
-        min-height: 50vh;
+        --adjust-to: "height";
+        height: 70vh;
     }
 }
 

@@ -169,7 +169,11 @@ globalThis.animeChan = new AnimeChan({
          */
         const container = document.getElementById(containerId) || document.documentElement,
             containerParams = container.getBoundingClientRect(),
-            minSize = containerParams.width < containerParams.height ? 'width' : 'height';
+            styles = window.getComputedStyle(container),
+            minSize = styles.getPropertyValue('--adjust-to')
+                ? styles.getPropertyValue('--adjust-to').slice(1, -1)
+                : (containerParams.width < containerParams.height) ? 'width' : 'height',
+            maxSize = (minSize !== 'width')? 'width' : 'height';
 
         animeChan.ratio = animeChan.part.body.main[addPrefix('natural', minSize)] / containerParams[minSize];
         ['width', 'height'].forEach((prop) => {
@@ -181,6 +185,11 @@ globalThis.animeChan = new AnimeChan({
                 });
             });
         });
+
+        if (styles.getPropertyValue('--adjust-to')) {
+            container.style[maxSize] = animeChan.part.body.main.style[addPrefix('max', maxSize)];
+            container.style.removeProperty(minSize);    
+        }
 
         ['top', 'left'].forEach((side) => {
             Object.keys(animeChan.part).forEach((partName) => {
