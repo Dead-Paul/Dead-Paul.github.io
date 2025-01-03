@@ -167,7 +167,9 @@ globalThis.animeChan = new AnimeChan({
          * Container that will contain anime character
          * @type {HTMLElement}
          */
-        const container = document.getElementById(containerId) || document.documentElement,
+        const container = document.getElementById(containerId) || document.documentElement;
+        container.setAttribute('style', '');
+        const
             containerParams = container.getBoundingClientRect(),
             styles = window.getComputedStyle(container),
             minSize = styles.getPropertyValue('--adjust-to')
@@ -188,7 +190,6 @@ globalThis.animeChan = new AnimeChan({
 
         if (styles.getPropertyValue('--adjust-to')) {
             container.style[maxSize] = animeChan.part.body.main.style[addPrefix('max', maxSize)];
-            container.style.removeProperty(minSize);    
         }
 
         ['top', 'left'].forEach((side) => {
