@@ -33,7 +33,7 @@ h1 {
 @media (orientation: portrait) {
     #anime-chan-container {
         --adjust-to: "width";
-        width: 25vw;
+        width: 60vw;
     }
 }
 @media (orientation: landscape) {
