@@ -19,6 +19,7 @@ const displayJarInfo = async function () {
             jarInfo = jarsInfo.jars[0];
         if (jarInfo) {
             animeChan.setActive('mouth', 'smile');
+            animeChan.setActive('eyes', 'love');
             //@ts-expect-error
             document.getElementById('collected-money').textContent = `Собрано: ${jarInfo.balance / 100}`;
             //@ts-expect-error
@@ -31,6 +32,7 @@ const displayJarInfo = async function () {
     } catch (error) {
         displayError('Не удалось получить накопления');
     }
+    animeChan.setActive('eyes', 'think');
     animeChan.setActive('mouth', 'sad');
 };
 
