@@ -1,0 +1,6 @@
+[submodule "falling-leaves"]
+	path = falling-leaves
+	url = https://github.com/Dead-Paul/falling-leaves
+[submodule "custom-anime-chan"]
+	path = custom-anime-chan
+	url = https://github.com/Dead-Paul/custom-anime-chan
