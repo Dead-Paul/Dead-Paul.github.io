@@ -3,7 +3,19 @@
     padding: 0px;
 }
 
+/* шрифт*/
+@font-face {
+    font-family: 'AnimeAce2';
+    src: url('../Anime Ace v3.ttf') format('opentype');
+}
+
 body {
+    /* перенес из .conteiner */
+    margin-left: 2vw;
+    margin-right: 2vw;
+    
+    font-family: "AnimeAce2";       /* шрифт*/
+
     background-image: url("../img/background.png");
     background-size: cover;
     background-attachment: fixed;
@@ -28,6 +40,7 @@ h1 {
 
 #anime-chan-container {
     position: relative;
+    filter: drop-shadow(2px 2px 2px rgb(0, 0, 0)); /* Тень */
 }
 
 @media (orientation: portrait) {
@@ -45,20 +58,26 @@ h1 {
 
 
 .container {
-    margin-left: 2vw;
-    margin-right: 2vw;
+    /* перенес в body, чтобы работало центрирование 
+    через "margin: auto", знаю что костыльно, сорян*/
+
+    /* margin-left: 2vw;
+    margin-right: 2vw; */
 
     position: relative;
     top: 50vh;
     transform: translateY(-50%);
 
-    padding-top: 2vh;
+    padding-top: 3vh; /* чуток добавил */
     padding-left: 5vw;
     padding-right: 5vw;
 
-    background-color: #473394;
-    border-radius: 20px;
-    opacity: 90%;
+    background-color: rgba(16, 23, 64, 0.85);     /* поменял цвет и указал прозрачность в самом цвете */
+    border-radius: 30px;                            /* чуток добавил */
+    /* opacity: 90%; */
+
+    margin: auto;           /* центрирование */
+    max-width: 850px;       /* ограничил ширину тк на больших экранах слишком много пробелов  */
 }
 
 .info {
@@ -66,6 +85,7 @@ h1 {
     align-items: center;
     justify-content: center;
     flex-direction: row;
+	padding-top: 2vh
 }
 
 .leaf {
