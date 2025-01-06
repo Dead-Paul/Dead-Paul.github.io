@@ -1,6 +1,6 @@
 //@ts-check
 
-import {AnimeChan, setAnimeChanEvents} from '../custom-anime-chan/AnimeChan.js'
+import AnimeChan from '../custom-anime-chan/AnimeChan.js'
 
 /** Path for all img sources @type {String}*/
 const path = './img/anime-chan/';
@@ -23,7 +23,7 @@ const animeChan = new AnimeChan('anime-chan-container', {
     },
 });
 
-setAnimeChanEvents(animeChan);
+animeChan.setEvents();
 
 
 /**@param {String} text */
