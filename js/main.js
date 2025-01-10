@@ -9,29 +9,29 @@ const pathToAnimeChan = './img/anime-chan/',
 
 /** Anime character @type {AnimeChan}*/
 const animeChan = new AnimeChan('anime-chan-container', {
-    sclera: { main: { src: pathToAnimeChan + 'sclera.png', position: { x: 0, y: 0 } } },
+    sclera: { main: { src: pathToAnimeChan + 'sclera.webp', position: { x: 0, y: 0 } } },
     eyes: {
-        main: { src: pathToAnimeChan + 'eyes.png', position: { x: 595, y: 368 } },
+        main: { src: pathToAnimeChan + 'eyes.webp', position: { x: 595, y: 368 } },
         //@ts-ignore : There is no requirement to write this objects in the constructor, but it will not throw error
-        love: { src: pathToAnimeChan + 'eyes-love.png', position: { x: 595, y: 368 }},
-        think: { src: pathToAnimeChan + 'eyes-think.png', position: { x: 595, y: 368 }}
+        love: { src: pathToAnimeChan + 'eyes-love.webp', position: { x: 595, y: 368 }},
+        think: { src: pathToAnimeChan + 'eyes-think.webp', position: { x: 595, y: 368 }}
     },
-    body: { main: { src: pathToAnimeChan + 'body.png', position: { x: 0, y: 0 } } },
+    body: { main: { src: pathToAnimeChan + 'body.webp', position: { x: 0, y: 0 } } },
     mouth: {
-        main: { src: pathToAnimeChan + 'mouth-open.png', position: { x: 695, y: 528 } },
+        main: { src: pathToAnimeChan + 'mouth-open.webp', position: { x: 695, y: 528 } },
         //@ts-ignore : There is no requirement to write this objects in the constructor, but it will not throw error
-        smile: { src: pathToAnimeChan + 'mouth-smile.png', position: { x: 653, y: 506 } },
-        sad: { src: pathToAnimeChan + 'mouth-sad.png', position: { x: 698, y: 531 } },
+        smile: { src: pathToAnimeChan + 'mouth-smile.webp', position: { x: 653, y: 506 } },
+        sad: { src: pathToAnimeChan + 'mouth-sad.webp', position: { x: 698, y: 531 } },
     },
     money: {
-        main : {src: pathToAnimeChan + 'money.png', position: { x: 570, y: 790 }}
+        main : {src: pathToAnimeChan + 'money.webp', position: { x: 570, y: 790 }}
     }
 });
 (async () => {
     /**@type {HTMLImageElement} */
     const moneyMainImg = await animeChan.part.money.main;
     moneyMainImg.style.display = 'none';
-    moneyMainImg.style.cursor = 'url("../img/cursor-grab.png"), grab';
+    moneyMainImg.style.cursor = 'url("../img/cursor-grab.webp"), grab';
 })();
 
 animeChan.setEvents();
@@ -39,7 +39,7 @@ animeChan.setEvents();
 const fallingLeaves = new FallingLeaves('falling-leaves-container', 1, 1, 25, 
     {height : '3vh', filter : 'opacity(80%)'}, 
     20, 
-    Array(5).fill('').map((_, index) => `${pathToFallingLeaves}leaf-${index}.png`)
+    Array(5).fill('').map((_, index) => `${pathToFallingLeaves}leaf-${index}.webp`)
 );
 
 setInterval(() => {
