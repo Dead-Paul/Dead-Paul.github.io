@@ -28,7 +28,10 @@ const animeChan = new AnimeChan('anime-chan-container', {
     }
 });
 (async () => {
-    (await animeChan.part.money.main).style.display = 'none';
+    /**@type {HTMLImageElement} */
+    const moneyMainImg = await animeChan.part.money.main;
+    moneyMainImg.style.display = 'none';
+    moneyMainImg.style.cursor = 'url("../img/cursor-grab.png"), grab';
 })();
 
 animeChan.setEvents();
@@ -68,9 +71,9 @@ const displayJarInfo = async function () {
             //@ts-ignore
             document.getElementById('target-money').textContent = `Цель: ${jarInfo.goal / 100}`;
             /**@type {HTMLImageElement} */
-            const money = await animeChan.part.money.main;
-            money.onclick = () => window.location.href = `https://send.monobank.ua/${jarInfo.sendId}`;
-            money.style.display = 'block';
+            const moneyMainImg = await animeChan.part.money.main;
+            moneyMainImg.onclick = () => window.location.href = `https://send.monobank.ua/${jarInfo.sendId}`;
+            moneyMainImg.style.display = 'block';
             return
         }
         else {
