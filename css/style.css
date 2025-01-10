@@ -6,7 +6,7 @@
 /* шрифт*/
 @font-face {
     font-family: 'AnimeAce2';
-    src: url('../Anime Ace v3.ttf') format('opentype');
+    src: url('./Anime Ace v3.ttf') format('opentype');
 }
 
 body {
