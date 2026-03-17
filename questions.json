@@ -1,0 +1,104 @@
+{
+  "questions": [
+    {
+      "text": "Welche Lebensmittelgruppe liefert hauptsächlich Proteine?",
+      "answers": [
+        {"text": "Obst", "isRight": 0},
+        {"text": "Fleisch, Fisch, Eier", "isRight": 1},
+        {"text": "Getreide", "isRight": 0},
+        {"text": "Öle und Fette", "isRight": 0}
+      ],
+      "isMultiAnswer": 0
+    },
+    {
+      "text": "Welche Vitamine sind besonders in Karotten enthalten?",
+      "answers": [
+        {"text": "Vitamin A", "isRight": 1},
+        {"text": "Vitamin C", "isRight": 0},
+        {"text": "Vitamin D", "isRight": 0},
+        {"text": "Vitamin K", "isRight": 0}
+      ],
+      "isMultiAnswer": 0
+    },
+    {
+      "text": "Welche Lebensmittel enthalten viele Ballaststoffe?",
+      "answers": [
+        {"text": "Weißbrot", "isRight": 0},
+        {"text": "Vollkornprodukte", "isRight": 1},
+        {"text": "Süßigkeiten", "isRight": 0},
+        {"text": "Fleisch", "isRight": 0}
+      ],
+      "isMultiAnswer": 0
+    },
+    {
+      "text": "Welche Nährstoffe liefern schnell Energie?",
+      "answers": [
+        {"text": "Kohlenhydrate", "isRight": 1},
+        {"text": "Proteine", "isRight": 0},
+        {"text": "Ballaststoffe", "isRight": 0},
+        {"text": "Vitamine", "isRight": 0}
+      ],
+      "isMultiAnswer": 0
+    },
+    {
+      "text": "Welche Fette gelten als gesund?",
+      "answers": [
+        {"text": "Transfette", "isRight": 0},
+        {"text": "Einfach und mehrfach ungesättigte Fette (z.B. in Nüssen, Olivenöl)", "isRight": 1},
+        {"text": "Gesättigte Fette", "isRight": 0},
+        {"text": "Hydrierte Fette", "isRight": 0}
+      ],
+      "isMultiAnswer": 0
+    },
+    {
+      "text": "Welche Getränke sind für eine gesunde Ernährung am besten geeignet?",
+      "answers": [
+        {"text": "Wasser und ungesüßter Tee", "isRight": 1},
+        {"text": "Cola und Limonade", "isRight": 0},
+        {"text": "Energy-Drinks", "isRight": 0},
+        {"text": "Säfte mit Zuckerzusatz", "isRight": 0}
+      ],
+      "isMultiAnswer": 0
+    },
+    {
+      "text": "Welche Lebensmittel sollten in großen Mengen vermieden werden? (Mehrfachantwort möglich)",
+      "answers": [
+        {"text": "Süßigkeiten", "isRight": 1},
+        {"text": "Fertiggerichte mit viel Salz", "isRight": 1},
+        {"text": "Gemüse", "isRight": 0},
+        {"text": "Obst", "isRight": 0}
+      ],
+      "isMultiAnswer": 1
+    },
+    {
+      "text": "Was gehört zu einer ausgewogenen Mahlzeit? (Mehrfachantwort möglich)",
+      "answers": [
+        {"text": "Proteine", "isRight": 1},
+        {"text": "Kohlenhydrate", "isRight": 1},
+        {"text": "Fette", "isRight": 1},
+        {"text": "Nur Zucker", "isRight": 0}
+      ],
+      "isMultiAnswer": 1
+    },
+    {
+      "text": "Wie viele Portionen Obst und Gemüse werden pro Tag empfohlen?",
+      "answers": [
+        {"text": "1 Portion", "isRight": 0},
+        {"text": "3–5 Portionen", "isRight": 1},
+        {"text": "8–10 Portionen", "isRight": 0},
+        {"text": "Keine bestimmte Menge", "isRight": 0}
+      ],
+      "isMultiAnswer": 0
+    },
+    {
+      "text": "Warum ist es wichtig, regelmäßig zu frühstücken?",
+      "answers": [
+        {"text": "Es steigert die Konzentration und Energie am Morgen", "isRight": 1},
+        {"text": "Es ist egal, wann man isst", "isRight": 0},
+        {"text": "Nur um Gewicht zuzunehmen", "isRight": 0},
+        {"text": "Frühstücken verhindert alle Krankheiten", "isRight": 0}
+      ],
+      "isMultiAnswer": 0
+    }
+  ]
+}

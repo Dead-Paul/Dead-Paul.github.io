@@ -1,0 +1,215 @@
+/* ----------------------------
+   Basic body and container
+------------------------------- */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #121212;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 30px;
+}
+
+#main-quiz-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+#user-score {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #1f1f1f;
+    color: #f0f0f0;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+/* ----------------------------
+   Question container
+------------------------------- */
+.question-container {
+    background: #1e1e1e;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* Question number */
+.question-number {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #cccccc;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.question-container h3 {
+    margin-top: 0;
+    color: #f0f0f0;
+}
+
+.answer-comment {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* ----------------------------
+   Answer container
+------------------------------- */
+.answers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.answer {
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: 0.2s;
+    background: #1a1a1a;
+    color: #f0f0f0;
+    position: relative; /* for icons */
+}
+
+.answer:hover {
+    background: #2a2a2a;
+}
+
+/* Selected answer during quiz */
+.checked-answer {
+    background: #263f6f;
+    border-color: #4a90e2;
+    font-weight: bold;
+}
+
+/* Correct answer after quiz */
+.correct-answer {
+    background: #285430;
+    border-color: #4caf50;
+    font-weight: bold;
+}
+
+/* Add checkmark icon */
+.correct-answer::after {
+    content: " ✓";
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4caf50;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Wrong answer after quiz */
+.wrong-answer {
+    background: #5a1a1a;
+    border-color: #f44336;
+    font-weight: bold;
+}
+
+/* Add cross icon */
+.wrong-answer::after {
+    content: " ✗";
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #f44336;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* ----------------------------
+   End quiz button
+------------------------------- */
+.end-quiz-button {
+    margin-top: 30px;
+    padding: 14px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: #4a90e2;
+    color: #f0f0f0;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.end-quiz-button:hover {
+    background: #357ab8;
+}
+
+/* ----------------------------
+   Animations for clicks
+------------------------------- */
+.answer:active {
+    transform: scale(0.97);
+    transition: transform 0.1s;
+}
+
+/* ----------------------------
+   User results container with bright background, full width
+------------------------------- */
+#results-container {
+    background: #4a90e2;        /* bright blue background */
+    color: #f0f0f0;             /* light text for contrast */
+    padding: 25px 30px;
+    border-radius: 15px;
+    margin: 20px auto;          /* center horizontally */
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 95%;             /* almost full width */
+    width: 95%;
+    overflow: hidden;           /* emojis stay inside container */
+    word-break: break-word;     /* wrap long text if needed */
+}
+
+/* Results summary text */
+#user-results-text {
+    font-size: 22px;
+    margin: 0;
+}
+
+/* Results percentage text */
+#user-results-percentage {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Emoji display - full width row */
+#emoji {
+    font-size: 60px;
+    display: flex;
+    justify-content: center;     /* center all emojis in a row */
+    flex-wrap: nowrap;           /* force all in one row */
+    gap: 5px;                    /* spacing between emoji blocks */
+    margin-top: 10px;
+    overflow-x: auto;            /* allow scrolling if still too many */
+}
+
+/* Close / action button */
+#close-result-container-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: none;
+    background: #1c5aa6;        /* darker blue for button */
+    color: #f0f0f0;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 20px;
+}
+
+#close-result-container-button:hover {
+    background: #154a86;        /* slightly darker on hover */
+}
